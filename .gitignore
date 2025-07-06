@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDEs
+.vscode/
+.idea/
+
+# System
+*.swp
+*.swo
+
+# Coverage / testing
+coverage/
+.nyc_output/
+
+# Dependency lock (optional if you don’t want lock files in repo)
+# package-lock.json
+# yarn.lock
+
+# Angular-specific (optional)
+.angular/cache/
+
+# React Native / Expo (if mobile dev is involved)
+.expo/
+.expo-shared/
+
+# Git
+.git/
+
+# Binaries / Output
+*.exe
+*.out
+*.app
