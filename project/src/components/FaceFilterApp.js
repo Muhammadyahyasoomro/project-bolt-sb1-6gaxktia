@@ -728,6 +728,15 @@ export class FaceFilterApp {
         indexTip.y < pinkyTip.y) {
       return 'Finger Point 👉';
     }
+    // Finger point
+    if (this.distance(middleTip, wrist) > 120 &&
+        [middleTip, ringTip, pinkyTip].every(tip => 
+          this.distance(tip, wrist) < 110) &&
+        indexTip.y < middleTip.y &&
+        indexTip.y < ringTip.y &&
+        indexTip.y < pinkyTip.y) {
+      return 'middle Finger Point 👉';
+    }
     
     return '';
   }
