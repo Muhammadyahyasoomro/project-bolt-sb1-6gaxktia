@@ -1,4 +1,4 @@
-import { Hands } from '@mediapipe/hands'
+import * as handsModule from '@mediapipe/hands'
 
 export class HandDetector {
   constructor() {
@@ -11,7 +11,8 @@ export class HandDetector {
 
   async initialize() {
     try {
-      this.hands = new Hands({
+      // Use handsModule.Hands as the constructor
+      this.hands = new handsModule.Hands({
         locateFile: (file) => {
           return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
         }
