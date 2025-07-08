@@ -1,3 +1,4 @@
+
 import { HandDetector } from '../utils/HandDetector.js';
 
 export class FaceFilterApp {
@@ -427,10 +428,15 @@ export class FaceFilterApp {
       
       this.startVoiceLevelLoop();
 
-      // Hand detection
-      this.handDetector = new HandDetector();
-      await this.handDetector.initialize();
-      this.startHandLoop();
+      // Hand detection - Use global HandDetector class
+      if (typeof HandDetector !== 'undefined') {
+        this.handDetector = new HandDetector();
+        await this.handDetector.initialize();
+        this.startHandLoop();
+      } else {
+        console.error('HandDetector class not found. Make sure HandDetector.js is loaded.');
+        errorDiv.textContent = 'Hand detection not available. Please ensure all scripts are loaded.';
+      }
       
     } catch (err) {
       errorDiv.textContent = 'Unable to access camera or microphone: ' + (err?.message || err);
